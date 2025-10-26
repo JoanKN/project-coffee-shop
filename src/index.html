@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Our coffee shop have the best quality coffee beans. The offer includes various aromas and grain intensivities. You'll keep coming back for more!">
+  <title>El Tigre - buy best quality of coffee beans</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,900;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" async>
+  <link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <section class="main overlay overlay--main">
+    <div class="overlay__absolute">
+      <div class="container">
+        <nav class="navbar">
+          <div class="navbar__brand">
+            <a class="navbar__logo" href="#"><p>El Tigre</p><p>Venezuela coffee beans</p></a>
+          </div>
+          <div class="navbar__nav">
+            <ul>
+              <li>
+                  <a class="nav__link" href="#home">Home</a>
+              </li>
+              <li>
+                  <a class="nav__link" href="#products">Products</a>
+              </li>
+              <li>
+                  <a class="nav__link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <header class="header">
+        <div class="header__title">
+        </div>
+        <div class="header__discover">
+          <p>Discover</p>
+          <p class="icon icon-arrow"></p>
+        </div>
+      </header>
+    </div>
+  </section>
+
+  <div id="pages">
+    <section id="home" class="home page">
+      <div class="home__wrapper container">
+        <h1 class="header-gold">Products</h1>
+        <div class="product-list"></div>
+      </div>
+      <div class="home__about overlay overlay--about">
+        <h1 class="header-gold">About us</h1>
+        <div class="about__carousel">
+
+          <div class="main-carousel">
+            <div class="carousel-cell">
+              <div class="cell__item">
+                <div class="row">
+                  <div class="col-4">
+                    <img src="./images/carousel-3.webp" alt="">
+                  </div>
+                  <div class="col-8 cell__opinion">
+                      <h2>Elizabeth <span>Doherty</span></h2>
+                      <p>Experienced barista from Bahamas. She says that Venezuela has opened her eyes on coffee. "It's not about the taste", she says. "It's all about the feelings".</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-cell">
+              <div class="cell__item">
+                <div class="row">
+                  <div class="col-4">
+                    <img src="./images/carousel-2.webp" alt="">
+                  </div>
+                  <div class="col-8 cell__opinion">
+                      <h2>Max <span>Selfish</span></h2>
+                      <p>Max is the austrian barista with years of experience from the hotels across the whole Europe. "Venezuela coffee was a lightening experience for me! I have never drink such an amazing coffee!", he says.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-cell">
+              <div class="cell__item">
+                <div class="row">
+                  <div class="col-4">
+                    <img src="./images/carousel-1.webp" alt="">
+                  </div>
+                  <div class="col-8 cell__opinion">
+                      <h2>Ping <span>Nihao</span></h2>
+                      <p>Ping is the youngest in the team. He doesn't like calling caffee a mysterious act. He says, a good coffee is like a mathematical formula. Once you figured it out, every coffee you make is a masterpiece.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>© 2021 EL TIGRE inc.</p>
+      </footer>
+    </section>
+    <section id="products" class="page">
+      <h1 class="header-gold">Products</h1>
+      <div class="product-list products__wrapper container"></div>
+      <footer class="footer">
+        <p>© 2021 EL TIGRE inc.</p>
+      </footer>
+    </section>
+    <section id="contact" class="page">
+      <h1 class="header-gold">Contact us</h1>
+      <div class="contact__wrapper container">
+        <h4>Name</h4>
+        <input type="text" placeholder="">
+        <h4>Title</h4>
+        <input type="text" placeholder="">
+        <h4>Message</h4>
+        <textarea placeholder="" rows="10" cols="30" maxlength="1000"></textarea>
+        <button type="submit" class="btn">Submit</button>
+      </div>
+      <footer class="footer">
+        <p>© 2021 EL TIGRE inc.</p>
+      </footer>
+    </section>
+  </div>
+
+  <script id="template-store-product" type="text/x-handlebars-template">
+    <article class="product">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="product__text">
+            <h1 class="product__title">{{ id }} {{ title }}</h1>
+            <div class="product__description">
+              <p>{{ description }}</p>
+            </div>
+            <ul class="product__properties">
+              <li>Roasting: <span>{{ roasting }}</span></li>
+              <li>Intensity: <span>{{ intensity }}</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="product__image"><!--potrójny wąs, aby kod HTML był traktowany jak kod HTML a nie jako tekst-->
+            {{{ image }}}
+            <div class="product__prices">
+              <p>{{ priceOld }}</p>
+              <p>{{ priceNew }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="vendor/flickity.pkgd.min.js"></script>
+  <script src="js/app.js" type="module"></script>
+
+</body>
+</html>
