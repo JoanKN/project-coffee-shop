@@ -1,0 +1,66 @@
+/*Warto zastanowić się teraz nad globalnymi stylami. Na początku pomyśl, jakie klasy dla “układu” (_layout.scss) mogą nam się przydać. 
+Prawdopodobnie przyda się klasa .container. Klasy gridowe już mamy (dzięki Bootstrapowi), 
+ale może dobrym pomysłem byłoby przygotowanie klasy .page dla stylu “podstrony”? 
+Mogłaby to być np. klasa dająca jakiś mały padding z góry i dołu elementu.*/
+
+.container {
+  max-width: 1164px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page { //klasa dla podstron np dodająca padding gora dól
+  padding: 10px 0;
+}
+
+.overlay {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0;
+  color: $color-light;
+  position: relative;
+  
+  &::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $color-dark;
+    opacity: 0.6;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 15px;
+  letter-spacing: 0px;
+  line-height: 25px;
+  color: $color-lightDark;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) and (max-width: 1204px) {
+  .footer {
+    padding: 0;
+  }
+}
+
+@media (max-width:767px){
+  /* layout */
+  .container{
+    max-width: auto;
+  }
+
+  .footer {
+    scale: 0.7;
+    padding: 0;
+
+    p{
+      margin : 0 auto;
+    }
+  }
+}

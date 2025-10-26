@@ -1,0 +1,51 @@
+/*Następnie warto zająć się plikiem typography.scss. 
+Widzisz jakieś powtarzające się nagłówki czy style dla tekstu? 
+Warto przygotować odpowiednie klasy.*/
+
+.header-gold{
+  //border: 1px solid red;
+  margin-bottom: 149.5px;
+  font-size: 75px;
+  letter-spacing: 15px;
+  line-height: 100px;
+  text-transform: uppercase;
+  color: $color-main;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+
+  &::after{
+    content: "";
+    width: 777px;
+    height: 6px;
+    background-color: $color-main;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,0%);
+    top: 132.5px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1204px) {
+  .header-gold {
+    scale: 0.5;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width:767px){
+  .header-gold{
+    margin-bottom: 50px;
+    font-size: 22.5px;
+    letter-spacing: 4.5px;
+    line-height: 50px;
+  
+    &::after{
+      width: 233px;
+      height: 2.5px;
+      top: 45px;
+    }
+  }
+}

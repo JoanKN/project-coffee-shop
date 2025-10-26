@@ -1,0 +1,129 @@
+.overlay--about {
+  height: 855px;
+  background-image: url('../images/about-us.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.home {
+  &__about{
+    padding: 50px 0;
+
+    .row {
+      //border: 2px solid black;
+      margin: 0 auto;
+      flex-wrap: nowrap;  
+    }
+
+    .col-4{
+      object-fit: cover;
+      padding: 0;
+    }
+    
+    .col-8{
+      object-fit: cover;
+      padding: 0;
+    }
+  }
+}
+
+.home .about__carousel {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 0;
+  max-width: 1440px;
+  width: 90vw;
+  height: 440px;
+  font-size: 40px;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-style: italic;
+
+  img {
+    height: 350px;
+  }
+
+  .cell__opinion {
+    h2{
+      font-style: normal;
+      font-weight: 400;
+      font-size: larger;
+      margin-top: 0;
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+      max-width: fit-content;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1204px) {
+  .overlay--about {
+    background-size: cover;
+    height: 450px;
+
+  }
+
+  .home {
+    &__about {
+      padding: 0;
+    }
+  }
+
+  .home .about__carousel {
+    top: 30%;
+    max-width: 768px;
+    width: 90vw;
+    height: 220px;
+    font-size: 22px;
+
+    img {
+      height: 220px;
+    }
+  }
+}
+
+@media (max-width:767px){
+  .overlay--about {
+    background-size: cover;
+    height: 300px;
+
+  }
+
+  .home {
+    &__about {
+      padding: 0;
+
+      .row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  .home .about__carousel {
+    top: 25%;
+    max-width: 768px;
+    width: 90vw;
+    height: 220px;
+    font-size: 9px;
+    text-align: center;
+ 
+    img {
+      height: 100px;
+      margin: 0 auto;
+    }
+
+    .cell__opinion {
+      margin-top: 10px;
+    }
+  }
+}
